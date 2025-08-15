@@ -6,6 +6,7 @@
 * Salidas: 5, una por cada resultado de la operacion aritmetica.
 */
 import java.util.Scanner;
+import java.lang.Math.*;
 
 public class Calculadora {
 
@@ -23,38 +24,34 @@ public class Calculadora {
         numero2 = entrada.nextDouble();
         entrada.nextLine();
 
-        double suma, resta, multiplicacion, modulo, division;
-        suma =  sumar(numero1, numero2);
+        double suma, resta, multiplicacion, modulo, division, area; // Declaracion
+        suma = sumar(numero1, numero2);
         resta = restar(numero1, numero2);
-        multiplicacion = multiplicar(numero1, numero2);
-        modulo = modular(numero1, numero2);
-        division = dividir(numero1, numero2);
+        multiplicacion = numero1 * numero2;
+        modulo = numero1 % numero2;
+        division = numero1 / numero2;
+        area = radioCirculo(numero1);
+
         System.out.println("El resultado de la suma es: " + suma);
         System.out.println("El resultado de la resta es: " + resta);
         System.out.println("El resultado de la multiplicacion es: " + multiplicacion);
-        System.out.println("El resultado de el modulo es: " + modulo);
+        System.out.println("El resultado del modulo es: " + modulo);
         System.out.println("El resultado de la division es: " + division);
-    } 
+        System.out.println("El area del circulo es: " + area);
 
-    public static double sumar (double a, double b) {
-       double suma = a + b;
-       return suma;
     }
 
-    public static double restar (double a, double b) {
+    public static double sumar(double a, double b) {
+        double suma = a + b;
+        return suma;
+    }
+
+    public static double restar(double a, double b) {
         return a - b;
     }
 
-    public static double multiplicar (double a, double b) {
-        return a * b;
-    }
-
-    public static double modular (double a, double b) {
-        return a % b;
-    }
-
-    public static double dividir (double a, double b) {
-        return a / b;
+    public static double radioCirculo(double r) {
+        return Math.PI * Math.pow(r, 2);
     }
 
 
